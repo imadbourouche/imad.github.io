@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 export function Hero() {
   const scrollToSection = (id: string) => {
@@ -13,11 +13,11 @@ export function Hero() {
             <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></span>
             <span className="text-sm">Available for new opportunities</span>
           </div>
-          
+
           <h1 className="text-6xl md:text-7xl lg:text-8xl tracking-tight text-slate-900">
             Imad Bourouche
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-slate-600 max-w-2xl mx-auto">
             I'm a Software Engineer with a strong focus on backend and full-stack development. Skilled in creating robust, efficient systems using modern tech stacks.
           </p>
@@ -31,13 +31,23 @@ export function Hero() {
             View My Work
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
-          
+
           <button
             onClick={() => scrollToSection('contact')}
             className="px-8 py-4 bg-white text-slate-900 rounded-lg hover:bg-slate-50 transition-all border-2 border-slate-900"
           >
             Get In Touch
           </button>
+
+          <a
+            href="https://drive.google.com/file/d/1s15QmrdCogBKwVEsP8El4WBwgNrCGtk7/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-white text-slate-900 rounded-lg hover:bg-slate-50 transition-all border-2 border-slate-900 flex items-center gap-2"
+          >
+            <Download className="w-5 h-5" />
+            Download CV
+          </a>
         </div>
 
         <div className="flex items-center justify-center gap-6 pt-8">
