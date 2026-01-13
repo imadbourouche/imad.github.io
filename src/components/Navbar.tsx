@@ -4,12 +4,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
 ];
 
 export function Navbar() {

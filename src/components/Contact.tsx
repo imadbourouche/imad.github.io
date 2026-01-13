@@ -6,7 +6,7 @@ export function Contact() {
   // action pointing to FormSubmit.co
 
   return (
-    <section id="contact" className="py-32 px-6 bg-slate-100">
+    <section id="contact" className="py-32 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-20">
           <p className="text-teal-600 tracking-wider uppercase text-sm">Get In Touch</p>
