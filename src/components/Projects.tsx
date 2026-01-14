@@ -56,32 +56,32 @@ export function Projects() {
 
   const cols =
     filteredProjects.length === 1
-      ? "grid-cols-1"
+      ? "md:grid-cols-1"
       : filteredProjects.length === 2
-      ? "grid-cols-2"
-      : "grid-cols-3";
+        ? "md:grid-cols-2"
+        : "md:grid-cols-3";
 
   return (
-    <section id="projects" className="py-32 px-6 bg-white">
+    <section id="projects" className="py-32 px-6 bg-white dark:bg-slate-900 transition-colors">
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-20">
-          <p className="text-teal-600 tracking-wider uppercase text-sm">Portfolio</p>
-          <h2 className="text-5xl tracking-tight text-slate-900">
+          <p className="text-teal-600 dark:text-teal-400 tracking-wider uppercase text-sm">Portfolio</p>
+          <h2 className="text-5xl tracking-tight text-slate-900 dark:text-white transition-colors">
             Featured Projects
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto transition-colors">
             A selection of projects that i worked on
           </p>
         </div>
 
         {/* Tab Switcher */}
         <div className="flex justify-center mb-16">
-          <div className="inline-flex p-1 bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div className="inline-flex p-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm transition-colors">
             <button
               onClick={() => setActiveTab('professional')}
               className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${activeTab === 'professional'
                 ? 'bg-teal-500 text-white shadow-md'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700'
                 }`}
             >
               <Monitor className="w-4 h-4" />
@@ -91,7 +91,7 @@ export function Projects() {
               onClick={() => setActiveTab('personal')}
               className={`px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${activeTab === 'personal'
                 ? 'bg-teal-500 text-white shadow-md'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700'
                 }`}
             >
               <Code2 className="w-4 h-4" />
@@ -101,11 +101,11 @@ export function Projects() {
         </div>
 
 
-        <div className={`grid ${cols} gap-8 justify-items-center`}>
+        <div className={`grid grid-cols-1 ${cols} gap-8 justify-items-center`}>
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full w-full max-w-sm lg:max-w-none"
+              className="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full w-full max-w-sm lg:max-w-none"
             >
               {/* <div className="relative h-48 overflow-hidden bg-slate-100">
                 <ImageWithFallback
@@ -116,11 +116,11 @@ export function Projects() {
               </div> */}
 
               <div className="p-8 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-600 mb-6 leading-relaxed flex-1 text-sm">
+                <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed flex-1 text-sm transition-colors">
                   {project.description}
                 </p>
 
@@ -128,7 +128,7 @@ export function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-teal-50 text-teal-700 rounded-full text-xs font-medium border border-teal-200"
+                      className="px-3 py-1 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 rounded-full text-xs font-medium border border-teal-200 dark:border-teal-800 transition-colors"
                     >
                       {tag}
                     </span>
@@ -140,7 +140,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex justify-center items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors text-sm font-medium"
+                    className="flex-1 inline-flex justify-center items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors text-sm font-medium"
                   >
                     <Github className="w-4 h-4" />
                     {project.category === 'professional' ? 'Website' : 'Code'}
@@ -150,7 +150,7 @@ export function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex justify-center items-center gap-2 px-4 py-2 bg-white text-slate-900 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors text-sm font-medium"
+                      className="flex-1 inline-flex justify-center items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors text-sm font-medium"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Demo

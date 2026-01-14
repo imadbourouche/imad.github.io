@@ -9,7 +9,7 @@ import { Contact } from './components/Contact';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

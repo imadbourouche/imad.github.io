@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { ModeToggle } from './mode-toggle';
 
 const navLinks = [
     { name: 'Home', href: '#home' },
@@ -87,15 +88,15 @@ export function Navbar() {
         if (link.href.startsWith('/')) {
             return location.pathname.startsWith(link.href);
         }
-        return activeSection === link.href.substring(1);
+        return location.pathname === '/' && activeSection === link.href.substring(1);
     };
 
     return (
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || location.pathname !== '/'
-                        ? 'bg-white/95 backdrop-blur-sm shadow-lg'
-                        : 'bg-transparent'
+                    ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg'
+                    : 'bg-transparent'
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-6 py-4">
@@ -107,7 +108,7 @@ export function Navbar() {
                                 <button
                                     key={link.name}
                                     onClick={() => handleNavClick(link.href)}
-                                    className={`text-slate-600 hover:text-slate-900 transition-colors relative ${isActive(link) ? 'text-slate-900' : ''
+                                    className={`text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors relative ${isActive(link) ? 'text-slate-900 dark:text-white' : ''
                                         }`}
                                 >
                                     {link.name}
@@ -118,10 +119,15 @@ export function Navbar() {
                             ))}
                         </div>
 
+                        {/* Theme Toggle - Desktop */}
+                        <div className="hidden md:block absolute right-0">
+                            <ModeToggle />
+                        </div>
+
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="md:hidden absolute right-0 text-slate-900 hover:text-teal-600 transition-colors"
+                            className="md:hidden absolute right-0 text-slate-900 dark:text-white hover:text-teal-600 transition-colors"
                             aria-label="Toggle menu"
                         >
                             {isMobileMenuOpen ? (
@@ -142,20 +148,24 @@ export function Navbar() {
                         onClick={() => setIsMobileMenuOpen(false)}
                     ></div>
 
-                    <div className="absolute top-20 left-0 right-0 bg-white shadow-2xl mx-4 rounded-2xl p-6">
+                    <div className="absolute top-20 left-0 right-0 bg-white dark:bg-slate-900 shadow-2xl mx-4 rounded-2xl p-6 border border-slate-100 dark:border-slate-800">
                         <div className="flex flex-col gap-4">
                             {navLinks.map((link) => (
                                 <button
                                     key={link.name}
                                     onClick={() => handleNavClick(link.href)}
                                     className={`text-left px-4 py-3 rounded-lg transition-colors ${isActive(link)
-                                            ? 'bg-teal-50 text-teal-700'
-                                            : 'text-slate-600 hover:bg-slate-50'
+                                        ? 'bg-teal-50 text-teal-700 dark:bg-teal-900/20 dark:text-teal-300'
+                                        : 'text-slate-600 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800'
                                         }`}
                                 >
                                     {link.name}
                                 </button>
                             ))}
+                            <div className="flex items-center justify-between px-4 py-3 text-slate-600 dark:text-slate-300">
+                                <span>Theme</span>
+                                <ModeToggle />
+                            </div>
                         </div>
                     </div>
                 </div>

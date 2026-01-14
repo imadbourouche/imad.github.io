@@ -9,7 +9,7 @@ const skillCategories = [
   {
     title: 'Backend',
     icon: Server,
-    skills: ['Node.js', 'Python', 'Java', 'Spring Boot','Ruby on Rails', 'GraphQL', 'REST APIs']
+    skills: ['Node.js', 'Python', 'Java', 'Spring Boot', 'Ruby on Rails', 'GraphQL', 'REST APIs']
   },
   {
     title: 'Database',
@@ -24,20 +24,20 @@ const skillCategories = [
   {
     title: 'Languages',
     icon: Code2,
-    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'Ruby', 'Bash','SQL']
+    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'Ruby', 'Bash', 'SQL']
   }
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="py-32 px-6 bg-white">
+    <section id="skills" className="py-32 px-6 bg-white dark:bg-slate-900 transition-colors">
       <div className="max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-20">
-          <p className="text-teal-600 tracking-wider uppercase text-sm">Technical Expertise</p>
-          <h2 className="text-5xl tracking-tight text-slate-900">
+          <p className="text-teal-600 dark:text-teal-400 tracking-wider uppercase text-sm">Technical Expertise</p>
+          <h2 className="text-5xl tracking-tight text-slate-900 dark:text-white transition-colors">
             Skills & Technologies
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto transition-colors">
             Tools and technologies I work with
           </p>
         </div>
@@ -48,20 +48,20 @@ export function Skills() {
             return (
               <div
                 key={category.title}
-                className="bg-white p-8 rounded-2xl border border-slate-200 hover:border-teal-500 hover:shadow-lg transition-all group"
+                className="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-teal-500 dark:hover:border-teal-500 hover:shadow-lg transition-all group"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center group-hover:bg-teal-500 transition-colors">
-                    <Icon className="w-6 h-6 text-teal-600 group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 bg-teal-50 dark:bg-teal-900/30 rounded-xl flex items-center justify-center group-hover:bg-teal-500 transition-colors">
+                    <Icon className="w-6 h-6 text-teal-600 dark:text-teal-400 group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-2xl text-slate-900">{category.title}</h3>
+                  <h3 className="text-2xl text-slate-900 dark:text-white transition-colors">{category.title}</h3>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-slate-50 text-slate-700 rounded-lg text-sm border border-slate-200"
+                      className="px-3 py-1 bg-slate-50 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 rounded-lg text-sm border border-slate-200 dark:border-slate-600 transition-colors"
                     >
                       {skill}
                     </span>
