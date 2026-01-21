@@ -104,6 +104,8 @@ Every architecture involves trade-offs. Here is a look at the pros and cons of t
 
 *   **Complexity:** Unlike Notion, if something breaks, Iâ€™m the one who has to fix the code.
 
+*   **Predictible URLs:** For now the url of the public note is predictible using the path of the note.
+
 ---
 
 ## Possible improvements
@@ -121,6 +123,8 @@ The system works, but a digital garden is never truly finished. Here is what Iâ€
 * [ ] **Alerting and observability system:** Implementing an observability system to handle logs and alerting.
 
 * [ ] **Notes replication and buckup:** Implementing a system to replicate notes to a private Gitlab repository.
+
+* [ ] **Add url randomization:** Add url randomization to make it more secure for public notes.
 
 ---
 
